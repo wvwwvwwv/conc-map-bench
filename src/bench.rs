@@ -90,12 +90,14 @@ fn run(options: &Options, h: &mut Handler) {
         case::<RwLockStdHashMapTable<u64, RandomState>>("RwLock<StdHashMap>", options, h);
         case::<DashMapTable<u64, RandomState>>("DashMap", options, h);
         case::<FlurryTable<u64, RandomState>>("Flurry", options, h);
+        case::<SccTable<u64, RandomState>>("Scc", options, h);
         case::<EvmapTable<u64, RandomState>>("Evmap", options, h);
         case::<CHashMapTable<u64>>("CHashMap", options, h);
     } else {
         case::<RwLockStdHashMapTable<u64, FxBuildHasher>>("RwLock<FxHashMap>", options, h);
         case::<DashMapTable<u64, FxBuildHasher>>("FxDashMap", options, h);
         case::<FlurryTable<u64, FxBuildHasher>>("FxFlurry", options, h);
+        case::<SccTable<u64, FxBuildHasher>>("Scc", options, h);
         case::<EvmapTable<u64, FxBuildHasher>>("FxEvmap", options, h);
     }
 }

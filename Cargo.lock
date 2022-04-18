@@ -198,6 +198,7 @@ dependencies = [
  "num_cpus",
  "parking_lot 0.11.2",
  "plotters",
+ "scc",
  "seize",
  "serde",
  "structopt",
@@ -1214,6 +1215,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
 dependencies = [
  "winapi-util",
+]
+
+[[package]]
+name = "scc"
+version = "0.6.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "3afb082dff6126c65dd62cada37adfba4e43bfb16318cf08414accc2f519519d"
+dependencies = [
+ "scopeguard",
 ]
 
 [[package]]
