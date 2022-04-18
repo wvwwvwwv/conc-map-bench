@@ -10,6 +10,7 @@ Implementations benchmarked
 - DashMap
 - Evmap
 - Crossbeam Skiplist
+- SCC
 
 ```sh
 > cargo tree | rg 'dashmap|chashmap|contrie|flurry|evmap|crossbeam-skiplist'
@@ -21,6 +22,7 @@ Implementations benchmarked
 ├── dashmap v5.0.0
 ├── evmap v10.0.2
 ├── flurry v0.3.1
+├── scc v0.6.5
 ```
 
 ## Workloads
