@@ -3,25 +3,20 @@
 conc-map-bench uses the bustle benchmarking harness. This is a port of the well regarded libcuckoo benchmark.
 
 Implementations benchmarked
-- RwLock Std HashMap
 - CHashMap
-- Contrie
-- Flurry
 - DashMap
 - Evmap
-- Crossbeam Skiplist
+- Flurry
 - SCC
 
 ```sh
-> cargo tree | rg 'dashmap|chashmap|contrie|flurry|evmap|crossbeam-skiplist'
+> cargo tree | rg 'chashmap|dashmap|evmap|flurry|scc'
 ```
 ```
 ├── chashmap v2.2.2
-├── contrie v0.1.4
-├── crossbeam-skiplist v0.0.0 (https://github.com/crossbeam-rs/crossbeam#e1d64600)
-├── dashmap v5.0.0
+├── dashmap v5.2.0
 ├── evmap v10.0.2
-├── flurry v0.3.1
+├── flurry v0.4.0
 ├── scc v0.6.5
 ```
 
@@ -56,7 +51,7 @@ remove  5%
 update 10%
 ```
 
-## How to run it?
+## How to Run It?
 
 ```sh
 mv results results.bk
@@ -66,12 +61,12 @@ mv results results.bk
 
 ## Results
 
-OS: MacOS Monterey
-CPU: Apple M1
+OS: SUSE Linux Enterprise Server 15 SP2
+CPU: Intel(R) Xeon(R) CPU E7-8880 v4 x 4 (total 176 logical cores)
 
 See the `results/` directory.
 
-### Ready Heavy (fx hasher)
+### Read Heavy (fx hasher)
 | | |
 :-------------------------:|:-------------------------:
 ![](results/ReadHeavy.fx.throughput.svg) | ![](results/ReadHeavy.fx.latency.svg)
