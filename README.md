@@ -47,7 +47,7 @@ remove  5%
 update 10%
 ```
 
-## How to Run It?
+## How to Run?
 
 ```sh
 mv results results.bk

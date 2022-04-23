@@ -19,7 +19,7 @@ json = "0.12.4"
 csv = "1.1.6"
 serde = { version = "1.0.131", features = ["derive"] }
 plotters = "0.3.1"
-scc = { git = "https://github.com/wvwwvwwv/scalable-concurrent-containers" }
+scc = "0.6"
 
 [profile.release]
 codegen-units = 1
