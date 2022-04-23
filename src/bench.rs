@@ -75,11 +75,11 @@ fn run(options: &Options, h: &mut Handler) {
     if options.use_std_hasher {
         case::<DashMapTable<u64, RandomState>>("DashMap", options, h);
         case::<FlurryTable<u64, RandomState>>("Flurry", options, h);
-        case::<SccTable<u64, RandomState>>("SCC", options, h);
+        case::<SccTable<u64, RandomState>>("Scc", options, h);
     } else {
         case::<DashMapTable<u64, FxBuildHasher>>("FxDashMap", options, h);
         case::<FlurryTable<u64, FxBuildHasher>>("FxFlurry", options, h);
-        case::<SccTable<u64, FxBuildHasher>>("SCC", options, h);
+        case::<SccTable<u64, FxBuildHasher>>("FxScc", options, h);
     }
 }
 

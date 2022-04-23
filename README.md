@@ -13,7 +13,7 @@ Implementations benchmarked:
 ```
 ├── dashmap v5.2.0
 ├── flurry v0.4.0
-├── scc v0.6.5
+├── scc v0.6.6
 ```
 
 ## Workloads
