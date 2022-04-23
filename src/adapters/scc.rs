@@ -17,6 +17,9 @@ where
     type Handle = Self;
 
     fn with_capacity(capacity: usize) -> Self {
+        for _ in 0..1024 {
+            drop(scc::ebr::Barrier::new());
+        }
         Self(Arc::new(scc::HashMap::new(capacity, H::default())))
     }
 
