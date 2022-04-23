@@ -1,5 +1,5 @@
 use std::collections::hash_map::RandomState;
-use std::{fmt::Debug, io, thread::sleep, time::Duration};
+use std::{fmt::Debug, io};
 
 use bustle::*;
 use fxhash::FxBuildHasher;
@@ -27,15 +27,6 @@ pub struct Options {
     pub csv: bool,
     #[structopt(long)]
     pub csv_no_headers: bool,
-}
-
-fn gc_cycle(options: &Options) {
-    sleep(Duration::from_millis(options.gc_sleep_ms));
-    let mut new_guard = crossbeam_epoch::pin();
-    new_guard.flush();
-    for _ in 0..32 {
-        new_guard.repin();
-    }
 }
 
 type Handler = Box<dyn FnMut(&str, u32, &Measurement)>;
@@ -76,24 +67,19 @@ where
                 break;
             }
         }
-
-        gc_cycle(options);
     }
     println!();
 }
 
 fn run(options: &Options, h: &mut Handler) {
     if options.use_std_hasher {
-        case::<CHashMapTable<u64>>("CHashMap", options, h);
         case::<DashMapTable<u64, RandomState>>("DashMap", options, h);
-        case::<EvmapTable<u64, RandomState>>("Evmap", options, h);
         case::<FlurryTable<u64, RandomState>>("Flurry", options, h);
         case::<SccTable<u64, RandomState>>("Scc", options, h);
     } else {
         case::<DashMapTable<u64, FxBuildHasher>>("FxDashMap", options, h);
-        case::<EvmapTable<u64, FxBuildHasher>>("FxEvmap", options, h);
         case::<FlurryTable<u64, FxBuildHasher>>("FxFlurry", options, h);
-        case::<SccTable<u64, FxBuildHasher>>("Scc", options, h);
+        case::<SccTable<u64, FxBuildHasher>>("FxScc", options, h);
     }
 }
 
