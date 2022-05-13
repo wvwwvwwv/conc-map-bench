@@ -11,8 +11,8 @@ pub struct SccTable<K: Eq + Hash + Sync + 'static, H: BuildHasher + 'static>(
 
 impl<K, H> Collection for SccTable<K, H>
 where
-    K: Send + Sync + From<u64> + Copy + 'static + Hash + Ord,
-    H: BuildHasher + Default + Send + Sync + 'static + Clone,
+    K: Send + Sync + From<u64> + Copy + Hash + Ord + 'static,
+    H: BuildHasher + Default + Send + Sync + Clone + 'static,
 {
     type Handle = Self;
 
@@ -30,8 +30,8 @@ where
 
 impl<K, H> CollectionHandle for SccTable<K, H>
 where
-    K: Send + Sync + From<u64> + Copy + 'static + Hash + Ord,
-    H: BuildHasher + Default + Send + Sync + 'static + Clone,
+    K: Send + Sync + From<u64> + Copy + Hash + Ord + 'static,
+    H: BuildHasher + Default + Send + Sync + Clone + 'static,
 {
     type Key = K;
 
