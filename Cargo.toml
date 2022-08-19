@@ -19,7 +19,7 @@ json = "^0.12"
 csv = "^1.1"
 serde = { version = "^1.0", features = ["derive"] }
 plotters = "^0.3"
-scc = "^0.7"
+scc = "^0.8"
 
 [profile.release]
 codegen-units = 1

@@ -2,15 +2,15 @@
 
 conc-map-bench uses the bustle benchmarking harness. This is a port of the well regarded libcuckoo benchmark.
 
-Implementations benchmarked: DashMap, flurry, and SCC.
+Implementations benchmarked: SCC, DashMap, and flurry.
 
 ```sh
 > cargo tree | rg 'dashmap|flurry|scc'
 ```
 ```
-├── dashmap v5.3.3
+├── dashmap v5.3.4
 ├── flurry v0.4.0
-├── scc v0.7.0
+├── scc v0.8.4
 ```
 
 ## Workloads
@@ -54,9 +54,11 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 12.3.1
+OS: macOS 12.5.1
 
 CPU: Apple M1
+
+Rust: 1.63.0
 
 See the `results/` directory.
 

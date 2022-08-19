@@ -252,13 +252,14 @@ dependencies = [
 
 [[package]]
 name = "dashmap"
-version = "5.3.3"
+version = "5.3.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "391b56fbd302e585b7a9494fb70e40949567b1cf9003a8e4a6041a1687c26573"
+checksum = "3495912c9c1ccf2e18976439f4443f3fee0fd61f424ff99fde6a66b15ecb448f"
 dependencies = [
  "cfg-if",
  "hashbrown",
  "lock_api",
+ "parking_lot_core",
 ]
 
 [[package]]
@@ -876,9 +877,9 @@ dependencies = [
 
 [[package]]
 name = "scc"
-version = "0.7.0"
+version = "0.8.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "0a820ba5672726228ad5e66f246366af2f452e4cd7ca069024e3d472a1028d81"
+checksum = "5d76c53dd8f5c6f8b42e0b59bc3bdd15fb7de611a06d77549b0afcd0abc1a65c"
 dependencies = [
  "scopeguard",
 ]
