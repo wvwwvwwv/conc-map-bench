@@ -51,14 +51,14 @@ Throughput
 20 Mop/s
 </text>
 <polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="74,205 79,205 "/>
-<text x="70" y="150" dy="0.5ex" text-anchor="end" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<text x="70" y="149" dy="0.5ex" text-anchor="end" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 25 Mop/s
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="74,150 79,150 "/>
-<text x="70" y="94" dy="0.5ex" text-anchor="end" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="74,149 79,149 "/>
+<text x="70" y="93" dy="0.5ex" text-anchor="end" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 30 Mop/s
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="74,94 79,94 "/>
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="74,93 79,93 "/>
 <text x="70" y="38" dy="0.5ex" text-anchor="end" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 35 Mop/s
 </text>
@@ -125,22 +125,22 @@ Throughput
 20 Mop/s
 </text>
 <polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,205 565,205 "/>
-<text x="570" y="150" dy="0.5ex" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<text x="570" y="149" dy="0.5ex" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 25 Mop/s
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,150 565,150 "/>
-<text x="570" y="94" dy="0.5ex" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,149 565,149 "/>
+<text x="570" y="93" dy="0.5ex" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 30 Mop/s
 </text>
-<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,94 565,94 "/>
+<polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,93 565,93 "/>
 <text x="570" y="38" dy="0.5ex" text-anchor="start" font-family="sans-serif" font-size="9.67741935483871" opacity="1" fill="#000000">
 35 Mop/s
 </text>
 <polyline fill="none" opacity="1" stroke="#000000" stroke-width="1" points="560,38 565,38 "/>
-<polyline fill="none" opacity="1" stroke="#0000FF" stroke-width="1" points="80,218 128,142 176,163 224,120 272,98 320,105 368,116 416,122 464,120 512,113 560,120 "/>
-<polyline fill="none" opacity="1" stroke="#FF0000" stroke-width="1" points="80,384 128,341 176,346 224,301 272,314 320,336 368,369 416,376 464,356 512,330 560,348 "/>
-<polyline fill="none" opacity="1" stroke="#00FF00" stroke-width="1" points="80,347 128,279 176,223 224,150 272,132 320,128 368,96 416,75 464,78 512,50 560,65 "/>
-<polyline fill="none" opacity="1" stroke="#FF00FF" stroke-width="1" points="80,344 128,270 176,214 224,135 272,120 320,103 368,92 416,40 464,42 512,36 560,44 "/>
+<polyline fill="none" opacity="1" stroke="#0000FF" stroke-width="1" points="80,212 128,147 176,147 224,101 272,65 320,104 368,97 416,116 464,104 512,107 560,101 "/>
+<polyline fill="none" opacity="1" stroke="#FF0000" stroke-width="1" points="80,379 128,345 176,339 224,334 272,327 320,334 368,374 416,307 464,335 512,360 560,351 "/>
+<polyline fill="none" opacity="1" stroke="#00FF00" stroke-width="1" points="80,349 128,276 176,223 224,151 272,141 320,112 368,93 416,67 464,67 512,78 560,54 "/>
+<polyline fill="none" opacity="1" stroke="#FF00FF" stroke-width="1" points="80,344 128,271 176,211 224,132 272,115 320,95 368,79 416,39 464,36 512,46 560,39 "/>
 <rect x="85" y="41" width="129" height="79" opacity="0.8" fill="#FFFFFF" stroke="none"/>
 <rect x="85" y="41" width="129" height="79" opacity="1" fill="none" stroke="#000000"/>
 <text x="125" y="51" dy="0.76em" text-anchor="start" font-family="Fira Code" font-size="10.483870967741936" opacity="1" fill="#000000">
