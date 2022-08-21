@@ -1,4 +1,4 @@
-pub use self::{dashmap::DashMapTable, flurry::FlurryTable, scc::SccTable};
+pub use self::{dashmap::DashMapTable, flurry::FlurryTable, scc::SccIndex, scc::SccMap};
 
 mod dashmap;
 mod flurry;

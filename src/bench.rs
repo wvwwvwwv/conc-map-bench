@@ -73,13 +73,15 @@ where
 
 fn run(options: &Options, h: &mut Handler) {
     if options.use_std_hasher {
-        case::<SccTable<u64, RandomState>>("Scc", options, h);
         case::<DashMapTable<u64, RandomState>>("DashMap", options, h);
         case::<FlurryTable<u64, RandomState>>("Flurry", options, h);
+        case::<SccIndex<u64, RandomState>>("SccHashIndex", options, h);
+        case::<SccMap<u64, RandomState>>("SccHashMap", options, h);
     } else {
-        case::<SccTable<u64, FxBuildHasher>>("FxScc", options, h);
         case::<DashMapTable<u64, FxBuildHasher>>("FxDashMap", options, h);
         case::<FlurryTable<u64, FxBuildHasher>>("FxFlurry", options, h);
+        case::<SccIndex<u64, FxBuildHasher>>("FxSccHashIndex", options, h);
+        case::<SccMap<u64, FxBuildHasher>>("FxSccHashMap", options, h);
     }
 }
 
