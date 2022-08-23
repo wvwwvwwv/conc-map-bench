@@ -10,7 +10,7 @@ Implementations benchmarked: SCC, DashMap, and flurry.
 ```
 ├── dashmap v5.3.4
 ├── flurry v0.4.0
-├── scc v0.9.1
+├── scc v0.10.0
 ```
 
 ## Workloads

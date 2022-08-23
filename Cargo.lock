@@ -877,9 +877,9 @@ dependencies = [
 
 [[package]]
 name = "scc"
-version = "0.9.1"
+version = "0.10.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a42cb1f8a97f5899dddc5ee4b0c8e6dd7ce19a19c8a0801100de8760953fbae3"
+checksum = "a60db24a2e1aeb155c76dd65ff3f28db53814b6244c4dbbf9f400d0fc70b87ac"
 dependencies = [
  "scopeguard",
 ]
