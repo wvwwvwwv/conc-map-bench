@@ -2,7 +2,7 @@
 
 conc-map-bench uses the bustle benchmarking harness. This is a port of the well regarded libcuckoo benchmark.
 
-Implementations benchmarked: SCC, DashMap, and flurry.
+Implementations benchmarked: DashMap, flurry, and `scc::{HashIndex, HashMap}`.
 
 ```sh
 > cargo tree | rg 'dashmap|flurry|scc'
@@ -10,12 +10,12 @@ Implementations benchmarked: SCC, DashMap, and flurry.
 ```
 ├── dashmap v5.3.4
 ├── flurry v0.4.0
-├── scc v0.10.1
+├── scc v0.10.2
 ```
 
 ## Workloads
 
-### Ready Heavy
+### Read Heavy
 
 A read heavy model with few inserts, removals and updates. Models caching of data in places such as webservers and disk page caches.
 ```
