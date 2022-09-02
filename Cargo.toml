@@ -6,12 +6,12 @@ edition = "2021"
 publish = false
 
 [dependencies]
-bustle = "^0.4"
+bustle = { git = "https://github.com/wvwwvwwv/bustle" }
 tracing-subscriber = "^0.3"
 num_cpus = "^1.13"
 fxhash = "^0.2"
 flurry = "^0.4"
-dashmap = "^5.3"
+dashmap = "^5.4"
 parking_lot = "^0.12"
 seize = "^0.2"
 structopt = "^0.3"
@@ -19,7 +19,7 @@ json = "^0.12"
 csv = "^1.1"
 serde = { version = "^1.0", features = ["derive"] }
 plotters = "^0.3"
-scc = "0.10.2"
+scc = "0.11.0"
 
 [profile.release]
 codegen-units = 1

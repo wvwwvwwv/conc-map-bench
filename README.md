@@ -8,9 +8,9 @@ Implementations benchmarked: DashMap, flurry, and `scc::{HashIndex, HashMap}`.
 > cargo tree | rg 'dashmap|flurry|scc'
 ```
 ```
-├── dashmap v5.3.4
+├── dashmap v5.4.0
 ├── flurry v0.4.0
-├── scc v0.10.2
+├── scc v0.11.0
 ```
 
 ## Workloads
