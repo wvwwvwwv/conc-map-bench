@@ -54,11 +54,11 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 12.5.1
+OS: macOS 13.0
 
 CPU: Apple M1
 
-Rust: 1.63.0
+Rust: 1.64.0
 
 See the `results/` directory.
 
