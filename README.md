@@ -10,7 +10,7 @@ Implementations benchmarked: DashMap, flurry, and `scc::{HashIndex, HashMap}`.
 ```
 ├── dashmap v5.4.0
 ├── flurry v0.4.0
-├── scc v0.11.2
+├── scc v0.11.3
 ```
 
 ## Workloads
@@ -54,11 +54,11 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 13.0
+OS: macOS 13.0.1
 
 CPU: Apple M1
 
-Rust: 1.64.0
+Rust: 1.65.0
 
 See the `results/` directory.
 
