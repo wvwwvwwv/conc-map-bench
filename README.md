@@ -10,7 +10,7 @@ Implementations benchmarked: DashMap, flurry, and `scc::{HashIndex, HashMap}`.
 ```
 ├── dashmap v5.4.0
 ├── flurry v0.4.0
-├── scc v0.11.4
+├── scc v0.11.5
 ```
 
 ## Workloads
