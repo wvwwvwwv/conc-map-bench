@@ -8,7 +8,7 @@ publish = false
 [dependencies]
 bustle = "^0.5"
 tracing-subscriber = "^0.3"
-num_cpus = "^1.14"
+num_cpus = "^1.15"
 fxhash = "^0.2"
 dashmap = "^5.4"
 parking_lot = "^0.12"
@@ -18,7 +18,7 @@ json = "^0.12"
 csv = "^1.1"
 serde = { version = "^1.0", features = ["derive"] }
 plotters = "^0.3"
-scc = "0.12.1"
+scc = "0.12.3"
 
 [profile.release]
 codegen-units = 1
