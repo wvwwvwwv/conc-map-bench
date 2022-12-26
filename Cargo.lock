@@ -742,9 +742,9 @@ dependencies = [
 
 [[package]]
 name = "pest"
-version = "2.5.1"
+version = "2.5.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "cc8bed3549e0f9b0a2a78bf7c0018237a2cdf085eecbbc048e52612438e4e9d0"
+checksum = "0f6e86fb9e7026527a0d46bc308b841d73170ef8f443e1807f6ef88526a816d4"
 dependencies = [
  "thiserror",
  "ucd-trie",
@@ -950,12 +950,9 @@ dependencies = [
 
 [[package]]
 name = "scc"
-version = "0.12.3"
+version = "1.0.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "4c7ab7aaaf543c12c5e2347845e1c5551c9e14c63765b781b1571f3d0f1dad63"
-dependencies = [
- "scopeguard",
-]
+checksum = "73f8d50de6c5512e3c7988228a3452b5da23345cf5b6c4612da0fccc4481cb50"
 
 [[package]]
 name = "scopeguard"
