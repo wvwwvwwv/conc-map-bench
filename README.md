@@ -9,7 +9,7 @@ Implementations benchmarked: DashMap, and `scc::{HashIndex, HashMap}`.
 ```
 ```
 ├── dashmap v5.4.0
-├── scc v1.0.8
+├── scc v1.1.1
 ```
 
 ## Workloads
@@ -53,11 +53,11 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 13.1.0
+OS: macOS 13.2.0
 
 CPU: Apple M1
 
-Rust: 1.66.0
+Rust: 1.67.0
 
 See the `results/` directory.
 
