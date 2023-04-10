@@ -9,7 +9,7 @@ Implementations benchmarked: DashMap, and `scc::{HashIndex, HashMap}`.
 ```
 ```
 ├── dashmap v5.4.0
-├── scc v1.1.1
+├── scc v1.4.4
 ```
 
 ## Workloads
