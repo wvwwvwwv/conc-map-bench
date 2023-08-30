@@ -47,21 +47,14 @@ mv results results.bk
 
 ## Results
 
-<<<<<<< HEAD
-OS: macOS 13.4.1
+OS: macOS 13.5.1
 
 CPU: Apple M1
-=======
-Machine: AWS EC2 M7i.8xlarge (Sapphire Rapids 8488C)
 
-OS: Ubuntu Linux 22.04
->>>>>>> 15c1685fd9a2ef3d67b3ed34cdbb33b89c3ba351
-
-Rust: 1.70.0
+Rust: 1.72.0
 
 See the `results/` directory.
 
-<<<<<<< HEAD
 ### Read Heavy (fx hasher)
 | | |
 :-------------------------:|:-------------------------:
