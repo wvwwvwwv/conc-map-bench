@@ -55,24 +55,7 @@ Rust: 1.72.0
 
 See the `results/` directory.
 
-### Read Heavy (fx hasher)
-| | |
-:-------------------------:|:-------------------------:
-![](results/ReadHeavy.fx.throughput.svg) | ![](results/ReadHeavy.fx.latency.svg)
-
-### Exchange (fx hasher)
-| | |
-:-------------------------:|:-------------------------:
-![](results/Exchange.fx.throughput.svg) | ![](results/Exchange.fx.latency.svg)
-
-### Rapid Grow (fx hasher)
-| | |
-:-------------------------:|:-------------------------:
-![](results/RapidGrow.fx.throughput.svg) | ![](results/RapidGrow.fx.latency.svg)
-
-=======
->>>>>>> 15c1685fd9a2ef3d67b3ed34cdbb33b89c3ba351
-### Read Heavy (std hasher)
+## Read Heavy (std hasher)
 | | |
 :-------------------------:|:-------------------------:
 ![](results/ReadHeavy.std.throughput.svg) | ![](results/ReadHeavy.std.latency.svg)
