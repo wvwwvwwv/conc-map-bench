@@ -17,8 +17,8 @@ where
     type Handle = Self;
 
     fn with_capacity(capacity: usize) -> Self {
-        for _ in 0..16384 {
-            drop(scc::ebr::Barrier::new());
+        for _ in 0..4096 {
+            drop(scc::ebr::Guard::new());
         }
         Self(Arc::new(scc::HashMap::with_capacity_and_hasher(
             capacity,
@@ -68,8 +68,8 @@ where
     type Handle = Self;
 
     fn with_capacity(capacity: usize) -> Self {
-        for _ in 0..16384 {
-            drop(scc::ebr::Barrier::new());
+        for _ in 0..4096 {
+            drop(scc::ebr::Guard::new());
         }
         Self(Arc::new(scc::HashIndex::with_capacity_and_hasher(
             capacity,
@@ -90,7 +90,7 @@ where
     type Key = K;
 
     fn get(&mut self, key: &Self::Key) -> bool {
-        self.0.read(key, |_, _| ()).is_some()
+        self.0.peek_with(key, |_, _| ()).is_some()
     }
 
     fn insert(&mut self, key: &Self::Key) -> bool {
@@ -102,6 +102,14 @@ where
     }
 
     fn update(&mut self, key: &Self::Key) -> bool {
-        unsafe { self.0.update(key, |_, v| *v += 1).is_some() }
+        if let scc::hash_index::Entry::Occupied(mut o) = self.0.entry(*key) {
+            unsafe {
+                let val = o.get_mut();
+                *val += 1;
+            }
+            true
+        } else {
+            false
+        }
     }
 }
