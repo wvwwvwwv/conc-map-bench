@@ -1,11 +1,26 @@
 use std::collections::hash_map::RandomState;
+use std::hash::BuildHasher;
+use std::iter;
 use std::{fmt::Debug, io};
 
 use bustle::*;
-use fxhash::FxBuildHasher;
 use structopt::StructOpt;
 
 use crate::{adapters::*, record::Record, workloads};
+
+#[derive(Debug)]
+pub enum HasherKind {
+    Std,
+    AHash,
+}
+
+fn parse_hasher_kind(hasher: &str) -> Result<HasherKind, &str> {
+    match hasher {
+        "std" => Ok(HasherKind::Std),
+        "ahash" => Ok(HasherKind::AHash),
+        _ => Err("invalid hasher, must be one of 'std' or 'ahash'"),
+    }
+}
 
 #[derive(Debug, StructOpt)]
 pub struct Options {
@@ -15,14 +30,12 @@ pub struct Options {
     pub operations: f64,
     #[structopt(long)]
     pub threads: Option<Vec<u32>>,
-    #[structopt(long)]
-    pub use_std_hasher: bool,
+    #[structopt(short, long, parse(try_from_str = parse_hasher_kind))]
+    pub hasher: HasherKind,
     #[structopt(long, default_value = "2000")]
     pub gc_sleep_ms: u64,
     #[structopt(long)]
     pub skip: Option<Vec<String>>, // TODO: use just `Vec<String>`.
-    #[structopt(long)]
-    pub complete_slow: bool,
     #[structopt(long)]
     pub csv: bool,
     #[structopt(long)]
@@ -48,39 +61,47 @@ where
         println!("-- {}", name);
     }
 
+    let gen_threads = || {
+        let n = num_cpus::get();
+
+        match n {
+            0..=8 => (1..=n as u32).collect(),
+            9..=16 => iter::once(1)
+                .chain((0..=n as u32).step_by(2).skip(1))
+                .collect(),
+            _ => iter::once(1)
+                .chain((0..=n as u32).step_by(4).skip(1))
+                .collect(),
+        }
+    };
+
     let threads = options
         .threads
         .as_ref()
         .cloned()
-        .unwrap_or_else(|| (1..(num_cpus::get() * 3 / 2) as u32).collect());
-
-    let mut first_throughput = None;
+        .unwrap_or_else(gen_threads);
 
     for n in &threads {
         let m = workloads::create(options, *n).run_silently::<C>();
         handler(name, *n, &m);
-
-        if !options.complete_slow {
-            let threshold = *first_throughput.get_or_insert(m.throughput) / 5.;
-            if m.throughput <= threshold {
-                println!("too long, skipped");
-                break;
-            }
-        }
     }
     println!();
 }
 
 fn run(options: &Options, h: &mut Handler) {
-    if options.use_std_hasher {
-        case::<DashMapTable<u64, RandomState>>("DashMap", options, h);
-        case::<SccIndex<u64, RandomState>>("SccHashIndex", options, h);
-        case::<SccMap<u64, RandomState>>("SccHashMap", options, h);
-    } else {
-        case::<DashMapTable<u64, FxBuildHasher>>("FxDashMap", options, h);
-        case::<SccIndex<u64, FxBuildHasher>>("FxSccHashIndex", options, h);
-        case::<SccMap<u64, FxBuildHasher>>("FxSccHashMap", options, h);
+    match options.hasher {
+        HasherKind::Std => run_hasher_variant::<RandomState>(options, h),
+        HasherKind::AHash => run_hasher_variant::<ahash::RandomState>(options, h),
     }
+}
+
+fn run_hasher_variant<H>(options: &Options, h: &mut Handler)
+where
+    H: Default + Clone + Send + Sync + BuildHasher + 'static,
+{
+    case::<DashMapTable<u64, H>>("DashMap", options, h);
+    case::<SccIndex<u64, H>>("SccHashIndex", options, h);
+    case::<SccMap<u64, H>>("SccHashMap", options, h);
 }
 
 pub fn bench(options: &Options) {
