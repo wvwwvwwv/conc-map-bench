@@ -5,7 +5,8 @@ set -x
 BIN=./target/release/conc-map-bench
 OUT=./results
 
-RUSTFLAGS='-C target_feature=+avx2' cargo build --release
+# RUSTFLAGS='-C target_feature=+avx2' cargo build --release
+cargo build --release
 mkdir -p "$OUT"
 
 function bench {
