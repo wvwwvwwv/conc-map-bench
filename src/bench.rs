@@ -65,8 +65,8 @@ where
         let n = num_cpus::get();
 
         match n {
-            0..=8 => (1..=n as u32).collect(),
-            9..=16 => iter::once(1)
+            0..=10 => (1..=n as u32).collect(),
+            11..=16 => iter::once(1)
                 .chain((0..=n as u32).step_by(2).skip(1))
                 .collect(),
             _ => iter::once(1)
@@ -100,6 +100,7 @@ where
     H: Default + Clone + Send + Sync + BuildHasher + 'static,
 {
     case::<DashMapTable<u64, H>>("DashMap", options, h);
+    case::<PapayaMap<u64, H>>("PapayaMap", options, h);
     case::<SccIndex<u64, H>>("SccHashIndex", options, h);
     case::<SccMap<u64, H>>("SccHashMap", options, h);
 }

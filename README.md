@@ -10,6 +10,7 @@ because a map suitable for one workload may not be suitable for another.
 ### Read Heavy
 
 A read heavy model with few inserts, removals and updates. Models caching of data in places such as webservers and disk page caches.
+
 ```
 read   98%
 insert  1%
@@ -20,6 +21,7 @@ update  0%
 ### Exchange
 
 Insert and remove heavy model that replicates a scenario where the map is used to exchange data.
+
 ```
 read    10%
 insert  40%
@@ -30,6 +32,7 @@ update  10%
 ### Rapid Grow
 
 An insert heavy model that replicates load in a scenario where the map is used to gather large amounts of data under a short burst.
+
 ```
 read    5%
 insert 80%
@@ -47,40 +50,46 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 14.4.1
+OS: macOS 14.5.0
 
 CPU: Apple M2
 
-Rust: 1.77.2
+Rust: 1.79.0
 
 See the `results/` directory.
 
 ## Read Heavy (std hasher)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/ReadHeavy.std.throughput.svg) | ![](results/ReadHeavy.std.latency.svg)
 
 ### Exchange (std hasher)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/Exchange.std.throughput.svg) | ![](results/Exchange.std.latency.svg)
 
 ### Rapid Grow (std hasher)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/RapidGrow.std.throughput.svg) | ![](results/RapidGrow.std.latency.svg)
 
 ### Read Heavy (ahash)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/ReadHeavy.ahash.throughput.svg) | ![](results/ReadHeavy.ahash.latency.svg)
 
 ### Exchange (ahash)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/Exchange.ahash.throughput.svg) | ![](results/Exchange.ahash.latency.svg)
 
 ### Rapid Grow (ahash)
+
 | | |
 :-------------------------:|:-------------------------:
 ![](results/RapidGrow.ahash.throughput.svg) | ![](results/RapidGrow.ahash.latency.svg)
