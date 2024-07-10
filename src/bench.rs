@@ -32,8 +32,6 @@ pub struct Options {
     pub threads: Option<Vec<u32>>,
     #[structopt(short, long, parse(try_from_str = parse_hasher_kind))]
     pub hasher: HasherKind,
-    #[structopt(long, default_value = "2000")]
-    pub gc_sleep_ms: u64,
     #[structopt(long)]
     pub skip: Option<Vec<String>>, // TODO: use just `Vec<String>`.
     #[structopt(long)]
@@ -101,6 +99,7 @@ where
 {
     case::<DashMapTable<u64, H>>("DashMap", options, h);
     case::<PapayaMap<u64, H>>("PapayaMap", options, h);
+
     case::<SccIndex<u64, H>>("SccHashIndex", options, h);
     case::<SccMap<u64, H>>("SccHashMap", options, h);
 }
