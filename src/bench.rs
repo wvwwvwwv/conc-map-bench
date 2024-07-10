@@ -100,9 +100,16 @@ where
     H: Default + Clone + Send + Sync + BuildHasher + 'static,
 {
     case::<DashMapTable<u64, H>>("DashMap", options, h);
+<<<<<<< HEAD
     case::<PapayaMap<u64, H>>("PapayaMap", options, h);
     case::<SccIndex<u64, H>>("SccHashIndex", options, h);
     case::<SccMap<u64, H>>("SccHashMap", options, h);
+=======
+    case::<FlurryTable<u64, H>>("Flurry", options, h);
+    case::<EvmapTable<u64, H>>("Evmap", options, h);
+    case::<ContrieTable<u64, H>>("Contrie", options, h);
+    case::<SccMapTable<u64, H>>("SccMap", options, h);
+>>>>>>> 0713fa3ca4a21fd7325f7ef649a48d00c41a011f
 }
 
 pub fn bench(options: &Options) {
