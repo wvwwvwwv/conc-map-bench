@@ -16,7 +16,7 @@ json = "0.12.4"
 csv = "1.3.0"
 serde = { version = "1.0.204", features = ["derive"] }
 plotters = "0.3.6"
-scc = "2.1.2"
+scc = "2.1.4"
 papaya = "0.1.1"
 
 [profile.release]
