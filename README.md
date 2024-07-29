@@ -52,9 +52,9 @@ mv results results.bk
 
 OS: macOS 14.5.0
 
-CPU: Apple M2
+CPU: Apple M2 Max
 
-Rust: 1.79.0
+Rust: 1.80.0
 
 See the `results/` directory.
 
