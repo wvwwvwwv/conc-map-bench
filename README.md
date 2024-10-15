@@ -50,11 +50,11 @@ mv results results.bk
 
 ## Results
 
-OS: macOS 15.0.1
+OS: Ubuntu 20.04
 
-CPU: Apple M2 Max
+CPU: Intel(R) Xeon(R) Platinum 8375C CPU @ 2.90GHz
 
-Rust: 1.81.0
+Rust: 1.81.0 (target_feature=+avx2)
 
 See the `results/` directory.
 
